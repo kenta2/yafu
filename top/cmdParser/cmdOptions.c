@@ -40,7 +40,7 @@ SOFTWARE.
 #include <string.h>
 #include <inttypes.h>
 
-#ifdef __INTEL_LLVM_COMPILER
+#if defined(__INTEL_LLVM_COMPILER) || 1
 #include <ctype.h>
 #endif
 
