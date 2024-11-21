@@ -18,7 +18,7 @@ Purpose:	Port into Yafu-1.14.
 
 #include "lanczos.h"
 #include "ytools.h"
-#ifdef __INTEL_LLVM_COMPILER
+#if defined(__INTEL_LLVM_COMPILER) || 1
 #include <pthread.h>
 #endif
 
