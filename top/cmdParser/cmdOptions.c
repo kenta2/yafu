@@ -1208,7 +1208,8 @@ options_t* initOpt(void)
     strcpy(options->fact_plan, "normal");
     options->pretest = 0;
     options->want_output_expr = 1;
-    strcpy(options->tune_info, "");
+    // although tune_info has been allocated for one element, tune_info[0] has not been allocated
+    options->tune_info[0] = NULL;
     options->stopbase = 10;
     options->stopeq = -1;
     options->stople = -1;
