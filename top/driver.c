@@ -36,7 +36,7 @@ code to the public domain.
 #include <io.h>
 #endif
 
-#ifdef __INTEL_LLVM_COMPILER
+#if defined(__INTEL_LLVM_COMPILER) || 1
 #include <ctype.h>
 #endif
 
