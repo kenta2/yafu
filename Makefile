@@ -21,7 +21,11 @@ CC = gcc
 CFLAGS = -g -m64 -std=gnu99 -DUSE_SSE2 -fno-common
 #CFLAGS += -march=core2 -mtune=core2
 WARN_FLAGS = -Wall # -Wconversion
-OPT_FLAGS = -O2
+OPT_FLAGS = -O
+# note: -O2 causes segfault in siqs()
+# note: no optimzation fails to link because of inline functions of include/monty.h do not get included in libysiqs ; e.g.,
+# /usr/bin/ld: ./libysiqs.a(batch_factor.o): in function `pow2m':
+# /work/yafu/factor/batch_factor.c:542:(.text+0xc66): undefined reference to `u64div'
 
 BINNAME = yafu
 OBJ_EXT = .o
