@@ -2440,7 +2440,12 @@ int feval(int funcnum, int nargs, meta_t *metadata)
         }
 
         mpz_set(fobj->nfs_obj.gmp_n, operands[0]);
+#ifdef USE_NFS
         nfs(fobj);
+#else
+        fprintf(stderr,"ERROR: 3b49cfcb-ff97-4e17-b81f-097481843aed nfs without USE_NFS.  Aborting.\n");
+        exit(1);
+#endif
         mpz_set(operands[0], fobj->nfs_obj.gmp_n);
         print_factors(fobj->factors, fobj->N, fobj->VFLAG, fobj->NUM_WITNESSES, fobj->OBASE);
 
@@ -2910,7 +2915,12 @@ int feval(int funcnum, int nargs, meta_t *metadata)
 
         mpz_set(fobj->N, operands[0]);
         mpz_set(fobj->nfs_obj.gmp_n, operands[0]);
+#ifdef USE_NFS
         nfs(fobj);
+#else
+        fprintf(stderr,"ERROR: babf0ebb-29b8-4b72-91be-46184a27fcda nfs without USE_NFS.  Aborting.\n");
+        exit(1);
+#endif
         mpz_set(operands[0], fobj->nfs_obj.gmp_n);
         print_factors(fobj->factors, fobj->N, fobj->VFLAG, fobj->NUM_WITNESSES, fobj->OBASE);
         break;

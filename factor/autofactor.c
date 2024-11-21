@@ -536,7 +536,12 @@ void do_work(enum factorization_state method, factor_work_t *fwork,
 
 	case state_nfs:
 		mpz_set(fobj->nfs_obj.gmp_n,b);
+#ifdef USE_NFS
 		nfs(fobj);
+#else
+		fprintf(stderr,"ERROR: 8a9fe6e6-f3f5-4e23-bc43-cd8193d08168 nfs without USE_NFS.  Aborting.\n");
+		exit(1);
+#endif
 		mpz_set(b,fobj->nfs_obj.gmp_n);
 
 		// measure time for this completed work
