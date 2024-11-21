@@ -58,11 +58,11 @@ https://en.wikipedia.org/wiki/AVX-512#CPUs_with_AVX-512
 Pick the best one that your cpu supports.
 
 Roughly speaking:
-If you have an Intel Haswell CPU or newer (newer than 2013), use avx2.
+If you have an Intel Haswell CPU or newer (newer than 2013), use avx2 and bmi2.
 If you have an Intel SkylakeX or certain Cannon Lake or Cascade Lake cpus, use avx512.
 If you have an Ice Lake, Tiger Lake, Rocket Lake, or Sapphire Rapids cpu, use avx512-ifma.
 If you have a Zen4 or Zen5 AMD cpu, use avx512-ifma.
-If you have another AMD cpu newer than 2015, use avx2.
+If you have another AMD cpu newer than 2015, use avx2 and bmi2.
 Otherwise use sse41.
 
 If you have something other than Intel or AMD, (e.g., powerPC, Arm), 
