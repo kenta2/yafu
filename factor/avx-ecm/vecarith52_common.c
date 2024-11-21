@@ -593,8 +593,8 @@ void vec_bignum52_add_1(vec_bignum_t* a, base_t* b, vec_bignum_t* c)
 
 uint32_t vec_gte52(vec_bignum_t* u, vec_bignum_t* v)
 {
-
-    return;
+    fprintf(stderr,"ERROR: daa2c186-a6c6-405d-ba86-cd0e7cd6b8e1 next line has compilation error, so aborting. ('return' with no value, in function returning non-void)\n");
+    exit(1);
 }
 
 void vec_bignum52_mask_sub(vec_bignum_t* a, vec_bignum_t* b, vec_bignum_t* c, uint32_t wmask)
